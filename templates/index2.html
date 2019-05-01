@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block main %}
+    <div class="container-fluid">
+        <div class="side-body">
+            <div class="page-title">
+                <span class="title">Crawler</span>
+                <div class="description">输入微博用户名,即可爬取你想要得到的信息</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">
+                                <div class="title">Crawler</div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            查询 微博名为 '张三' 的用户,在下方输入 张三 点击爬取按钮,即可将结果展示到下方
+                            <div class="sub-title">Input</div>
+                            <div>
+                                <input type="text" class="form-control" placeholder="Text input">
+                            </div>
+                            <div class="checkbox3 checkbox-success checkbox-inline checkbox-check checkbox-round  checkbox-light">
+                                <input type="checkbox" id="checkbox-fa-light-2" checked="">
+                                <label for="checkbox-fa-light-2">
+                                  是否存入数据库
+                                </label>
+                                <button type="button" class="btn btn-info">开始爬取</button>
+                            </div>
+                            <div class="sub-title">爬取结果</div>
+                            <div>
+                                <textarea class="form-control" rows="3"></textarea>
+                            </div>
+                            <div class="sub-title">开关 <span class="description">( with <a href="https://github.com/nostalgiaz/bootstrap-switch">bootstrap-switch</a> )</span></div>
+                            <div>
+                                <input type="checkbox" class="toggle-checkbox" name="my-checkbox" checked>
+                            </div>
+                            <div class="sub-title">爬取模式 <span class="description">( with <a href="https://select2.github.io/">select2</a> )</span></div>
+                            <div>
+                                <select>
+                                    <optgroup label="模式1">
+                                        <option value="AK">1</option>
+                                        <option value="HI">2</option>
+                                    </optgroup>
+                                    <optgroup label="模式2">
+                                        <option value="CA">1</option>
+                                        <option value="NV">2</option>
+                                    </optgroup>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

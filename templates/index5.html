@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block main %}
+    <div class="container-fluid">
+        <div class="side-body">
+            <div class="page-title">
+                <span class="title">商品推荐系统</span>
+                <div class="description">查找用户喜好，推荐适合的商品给用户</div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">
+                                <div class="title">Commodity recommend</div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            输入用户微博名，您即可得到为该用户推荐的商品
+                            <div class="sub-title">Input</div>
+                            <div>
+                                <input type="text" class="form-control" placeholder="Text input">
+                            </div>
+                            <button type="button" class="btn btn-primary col-sm-12" style="height: 60px">商品推荐</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <div class="card primary">
+                        <div class="card-jumbotron">
+                            <canvas id="pie-chart" class="chart"></canvas>
+                        </div>
+                        <div class="card-body half-padding">
+                            <h4 class="float-left no-margin font-weight-300">Orders</h4>
+                            <div class="clear-both"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

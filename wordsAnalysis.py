@@ -90,7 +90,8 @@ if __name__ == '__main__':
 
     for index, id in enumerate(ids[beginNum:endNum]):
         name, vector = getKeyWordsByUserID(id)
-        collection.insert_one({'name': name, 'words': vector})
+        if len(vector) > 0:
+            collection.insert_one({'name': name, 'words': vector})
         resetAllCount(beginNum+1+index)
         print("{} / {}".format(beginNum+1+index, endNum))
 

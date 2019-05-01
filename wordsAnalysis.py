@@ -92,5 +92,6 @@ if __name__ == '__main__':
         name, vector = getKeyWordsByUserID(id)
         collection.insert_one({'name': name, 'words': vector})
         resetAllCount(beginNum+1+index)
+        print("{} / {}".format(beginNum+1+index, endNum))
 
 

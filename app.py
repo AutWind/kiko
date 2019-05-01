@@ -33,7 +33,7 @@ def login():
         email = request.form.get('email')
         password = request.form.get('password')
         if email == '123@qq.com' and password == '123':
-            return render_template('index.html')
+            return render_template('index1.html')
         else:
             return '用户名或密码错误'
 

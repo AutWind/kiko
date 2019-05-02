@@ -5,6 +5,18 @@ import pandas as pd
 from pymongo import MongoClient
 from api import *
 
+# mongo
+client = MongoClient('47.107.130.215', 27017)
+db = client['local']
+collection = db['weibo']
+
+
+def getAllWords():
+    allWords = []
+    for words in collection.find({}, {"_id": 0}):
+        allWords.append(words['words'])
+    return allWords
+
 
 # 提取带有权重的关键字
 def getRecordWithWeight(weibo):
@@ -58,24 +70,19 @@ def getKeyWordsByUserID(userID, key_num=20):
 # 已处理的微博数量
 def getAllCount():
     count = 0
-    for line in open('config/count.txt'):
+    for line in open('config/wordsCount.txt'):
         count = int(line)
     return count
 
 
 # 处理完一批后修正数量
 def resetAllCount(nums):
-    with open('config/count.txt', 'w') as f:
+    with open('config/wordsCount.txt', 'w') as f:
         f.write(str(nums))
 
 
 if __name__ == '__main__':
-
-    # mongo
-    client = MongoClient('47.107.130.215', 27017)
-    db = client['local']
-    collection = db['weibo']
-
+    
     # 加载停用词
     analyse.set_stop_words('config/stopWords.txt')
 

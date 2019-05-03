@@ -32,7 +32,6 @@ if __name__ == '__main__':
 
     # 结束索引
     endNum = len(ids)
-    endNum = 200
 
     import time
     begin = time.time()

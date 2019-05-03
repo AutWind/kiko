@@ -3,9 +3,13 @@
 ### app.py 是所有后端路由处理逻辑的地方
 ### recommand.py 是推荐系统
 
->getTop10(words,file) 需要传入用户关键词组与淘宝商品类别文件，淘宝商品类别文件是work2vec/bag.txt
-调用: from recommend import getTop10
-任何不明白联系 qq: 745998202
+>getTop10(words,file) 需要传入用户关键词组与淘宝商品类别文件
+
+>淘宝商品类别文件是work2vec/bag.txt
+
+>调用: from recommend import getTop10
+
+>任何不明白联系 qq: 745998202
 ---
 ### 运行
 ##### 你可以 clone 到本地，直接运行 app.py即可

@@ -1,5 +1,5 @@
 import json
-from jieba_fast import analyse
+from jieba import analyse
 import numpy as np
 import pandas as pd
 from pymongo import MongoClient

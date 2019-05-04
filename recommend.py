@@ -4,8 +4,8 @@ import gensim
 import logging
 import synonyms
 import re
-import jieba
-import jieba.analyse
+import jieba_fast
+import jieba_fast.analyse
 import codecs
 from sklearn.cluster import KMeans
 from sklearn.externals import joblib

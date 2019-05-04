@@ -7,6 +7,19 @@ db = client['local']
 collection = db['userRelationShip']
 
 
+# 查询所有UserID
+def getAllRelationShipID():
+    ids = []
+    for ID in collection.find({}, {"owner": 1}):
+        ids.append(ID['owner'])
+    return ids
+
+
+# 查询UserID对应的数据
+def getRelationShipByUserID(userID):
+    return collection.find({'owner': userID}, {'_id': 0}).next()
+
+
 # 已处理的用户数量
 def getAllCount():
     count = 0
@@ -32,11 +45,6 @@ def getRelationShip(weibo):
         for c in comment:
             comments.append({'comment_user_id': c['comment_user_id'], 'content': c['content']})
     return {'owner': owner, 'fans': fans, 'comments': comments}
-
-
-# 获取微博用户社交网络
-def getUserNetwork(weibo):
-    pass
 
 
 if __name__ == '__main__':

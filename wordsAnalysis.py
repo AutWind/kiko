@@ -25,6 +25,14 @@ def getAllUserID():
     return ids
 
 
+def getIDByName(name):
+    return collection.find({"name": name})
+
+
+def getNameByID(Id):
+    return collection.find({"userID": Id})
+
+
 def getKeyWordsById(Id):
     return collection.find({"userID": Id}).next()['words']
 

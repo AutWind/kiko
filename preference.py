@@ -8,6 +8,17 @@ db = client['local']
 collection = db['userPreference']
 
 
+def getUsersByPreference(preference):
+    users = []
+    for user in collection.find({'pref': preference}, {'userID': 1}):
+        users.append(user['userID'])
+    return users
+
+
+def getPreferenceById(Id):
+    return collection.find({"userID": Id}).next()['pref']
+
+
 # 已处理的用户数量
 def getAllCount():
     count = 0
@@ -32,15 +43,9 @@ if __name__ == '__main__':
 
     # 结束索引
     endNum = len(ids)
-
-    import time
-    begin = time.time()
-
     for index, _id in enumerate(ids[beginNum:endNum]):
         words = getKeyWordsById(_id)
         pref = getTop10(words, 'work2vec/bag.txt')
         collection.insert_one({'userID': _id, 'pref': pref})
         resetAllCount(beginNum+1+index)
         print("{} / {}".format(beginNum+1+index, endNum))
-
-    print(time.time()-begin)

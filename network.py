@@ -8,6 +8,13 @@ db = client['local']
 collection = db['userNetwork']
 
 
+def getNetworkById(Id):
+    cursor = collection.find({"userID": Id})
+    for data in cursor:
+        return data['statistics']
+    return ''
+
+
 def getMoreFans(fans):
     mf = []
     network = []
@@ -77,9 +84,9 @@ if __name__ == '__main__':
 
     for index, _id in enumerate(ids[beginNum:endNum]):
         network = getUserNetwork(_id)
-        resetAllCount(beginNum + 1 + index)
         if len(network['network']) == 0:
             continue
         network['statistics'] = getNetworkStatistics(network)
         collection.insert_one(network)
+        resetAllCount(beginNum + 1 + index)
         print("{} / {}".format(beginNum + 1 + index, endNum))

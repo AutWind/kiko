@@ -123,8 +123,8 @@ def recommendUserWithPreference(goods):
 
 
 if __name__ == '__main__':
-    allCollectionStats()
-    getWeiboByName('三千剑姬')
-    getOneStatistics('三千剑姬')
-    recommendAll('三千剑姬')
-    recommendUserWithPreference('西装')
+    print(allCollectionStats())
+    print(getWeiboByName('三千剑姬'))
+    print(getOneStatistics('三千剑姬'))
+    print(recommendAll('三千剑姬'))
+    print(recommendUserWithPreference('西装'))

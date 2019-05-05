@@ -8,6 +8,7 @@ db = client['local']
 collection = db['userPreference']
 
 
+
 def getUsersByPreference(preference):
     users = []
     for user in collection.find({'pref': preference}, {'userID': 1}):

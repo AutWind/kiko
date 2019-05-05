@@ -1,4 +1,33 @@
 {% extends "base.html" %}
+{% block ce %}
+<ul class="nav navbar-nav">
+    <li>
+        <a href="{{ url_for('index') }}">
+            <span class="icon fa fa-tachometer"></span><span class="title">information</span>
+        </a>
+    </li>
+    <li>
+        <a href="{{ url_for('crawler') }}">
+            <span class="icon fa fa-slack"></span><span class="title">Crawler</span>
+        </a>
+    </li>
+    <li>
+        <a href="{{ url_for('usernet') }}">
+            <span class="icon fa fa-cubes"></span><span class="title">User Net</span>
+        </a>
+    </li>
+    <li>
+        <a href="{{ url_for('recommend') }}">
+            <span class="icon fa fa-thumbs-o-up"></span><span class="title">Recommend</span>
+        </a>
+    </li>
+    <li class="active">
+        <a href="{{ url_for('commodity') }}">
+            <span class="icon glyphicon glyphicon-heart"></span><span class="title">Comodity</span>
+        </a>
+    </li>
+</ul>
+{% endblock %}
 {% block main %}
     <div class="container-fluid">
         <div class="side-body">
@@ -15,25 +44,21 @@
                             </div>
                         </div>
                         <div class="card-body">
+                            <form action="{{ url_for('commodity') }} " method="post">
                             输入用户微博名，您即可得到为该用户推荐的商品
                             <div class="sub-title">Input</div>
                             <div>
-                                <input type="text" class="form-control" placeholder="Text input">
+                                <input type="text" name="weiboName" class="form-control" placeholder="weiboName">
                             </div>
-                            <button type="button" class="btn btn-primary col-sm-12" style="height: 60px">商品推荐</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6 col-sm-12">
-                    <div class="card primary">
-                        <div class="card-jumbotron">
-                            <canvas id="pie-chart" class="chart"></canvas>
-                        </div>
-                        <div class="card-body half-padding">
-                            <h4 class="float-left no-margin font-weight-300">Orders</h4>
-                            <div class="clear-both"></div>
+                            <button type="submit" class="btn btn-primary col-sm-12" style="height: 60px">商品推荐</button>
+                            </form>
+                            <div class="row">
+                            {% for key in keyWords %}
+                            <div class="alert alert-success col-sm-2" role="alert">
+                                <strong>商品 {{ loop.index }}：{{ key }}</strong>
+                            </div>
+                            {% endfor %}
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -4,8 +4,6 @@ import gensim
 import logging
 import synonyms
 import re
-import jieba_fast
-import jieba_fast.analyse
 import codecs
 from sklearn.cluster import KMeans
 from sklearn.externals import joblib
@@ -104,7 +102,7 @@ if __name__ == '__main__':
     #model_train('work2vec/wiki_simple_fenci_re.txt','wiki.model')
     # 加载训练好的模型文件
     # model = word2vec.Word2Vec.load(save_model_name)
-    words = ['篮球','足球','化妆品']
+    words = ['戴树超','吃','妹子']
     result = getTop10(words,'work2vec/bag.txt')
     print(result)
 

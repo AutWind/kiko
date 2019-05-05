@@ -24,7 +24,9 @@ def getTop10(Allwords, Allbag_file='work2vec/bag.txt'):
 
 
 if __name__ == '__main__':
-    words = ['篮球', '足球', '化妆品']
-    result = getTop10(words)
-    print(result)
-
+    # words = ['篮球', '足球', '化妆品']
+    # result = getTop10(words)
+    # print(result)
+    s = 'haha,hahahaha1'
+    s = s.split(',')
+    print(s)

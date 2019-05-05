@@ -114,6 +114,7 @@
                                 <i class="fa fa-times icon"></i>
                             </button>
                         </div>
+                        {% block ce %}
                         <ul class="nav navbar-nav">
                             <li class="active">
                                 <a href="{{ url_for('index') }}">
@@ -141,6 +142,7 @@
 							    </a>
 							</li>
                         </ul>
+                        {% endblock %}
                     </div>
                     <!-- /.navbar-collapse -->
                 </nav>
